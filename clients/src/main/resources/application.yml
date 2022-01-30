@@ -1,0 +1,28 @@
+server:
+  port: 9000
+spring:
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+#      client-id: clients-consumer-1
+      group-id: clients-consumer-group-1
+      # Configures the Spring Kafka ErrorHandlingDeserializer that delegates to the 'real' deserializers
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+    properties:
+      spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+#      spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonSerializer
+      spring.deserializer.value.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+      spring.json:
+        trusted.packages: '*'
+#        value.default.type:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      default-topic: test
+
+# references:
+# https://www.confluent.io/blog/spring-kafka-can-your-kafka-consumers-handle-a-poison-pill/
