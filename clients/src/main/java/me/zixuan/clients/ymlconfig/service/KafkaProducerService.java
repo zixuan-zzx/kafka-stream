@@ -13,8 +13,8 @@ public class KafkaProducerService {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message) {
-        log.info(String.format("Sent message to Kafka topic: %s", message));
         kafkaTemplate.sendDefault(message);
+        log.info(String.format("Sent message to Kafka topic: %s", message));
 //        kafkaTemplate.send("test", message);
     }
 
