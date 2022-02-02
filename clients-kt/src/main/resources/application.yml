@@ -1,0 +1,23 @@
+server:
+  port: 9000
+spring:
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+      group-id: clients-kt-consumer-group-1
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+    properties:
+      spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+      #      spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonSerializer
+      spring.deserializer.value.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+      spring.json:
+        trusted.packages: '*'
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    template:
+      default-topic: test

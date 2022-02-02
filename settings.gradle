@@ -1,4 +1,6 @@
 rootProject.name = 'kafka-stream'
 include 'clients'
+include 'clients-kt'
 include 'hello-streams'
+include 'crypto-sentiment'
 
