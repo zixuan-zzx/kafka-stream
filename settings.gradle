@@ -1,3 +1,4 @@
 rootProject.name = 'kafka-stream'
 include 'clients'
+include 'hello-streams'
 
