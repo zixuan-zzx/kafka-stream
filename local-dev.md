@@ -25,7 +25,7 @@ kafka-topics --bootstrap-server broker:9092 \
 kafka-topics --bootstrap-server broker:9092 \
              --create \
              --topic test \
-             --partition 4 \
+             --partitions 4 \
              --replication-factor 1
 ```
 

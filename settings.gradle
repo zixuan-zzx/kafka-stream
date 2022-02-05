@@ -3,4 +3,6 @@ include 'clients'
 include 'clients-kt'
 include 'hello-streams'
 include 'crypto-sentiment'
+include 'video-game-leaderboard'
+include 'hello-streams-spring'
 
