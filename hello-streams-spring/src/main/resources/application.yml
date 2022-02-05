@@ -1,0 +1,9 @@
+#spring:
+#  kafka:
+#    streams:
+#      application-id: dev1
+#      bootstrap-servers: localhost:9092
+#      properties:
+#        default.key.serde: org.apache.kafka.common.serialization.Serdes$VoidSerde
+#        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+#        default.timestamp.extractor: org.apache.kafka.streams.processor.WallclockTimestampExtractor
