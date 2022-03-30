@@ -5,4 +5,6 @@ include 'hello-streams'
 include 'crypto-sentiment'
 include 'video-game-leaderboard'
 include 'hello-streams-spring'
+include 'hello-streams-spring-kt'
+include 'hello-streams-spring-kt'
 

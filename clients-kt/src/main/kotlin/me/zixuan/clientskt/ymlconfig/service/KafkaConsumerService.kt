@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service
 @Service
 class KafkaConsumerService {
     private val logger = LoggerFactory.getLogger(javaClass)
+
     @KafkaListener(topics = ["\${spring.kafka.template.default-topic}"])
     fun consume(message: String) {
         logger.info("Received message from Kafka topic: {}", message)
